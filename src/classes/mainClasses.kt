@@ -13,7 +13,7 @@ fun main(args : Array<String>)
     employeesList.add(Employee("Employee5", 28, RoleEnum.ENGINEER))
 
     employeesList.forEach {
-        println("${it.name} is ${it.role.role} and receives ${it.role.getPayment()} per month")
+        println("${it.id} ${it.name} is ${it.role.role} and receives ${it.role.getPayment()} per month")
     }
 
     println("\n--------------------------------------------------------------\nCreating the tasks...")
