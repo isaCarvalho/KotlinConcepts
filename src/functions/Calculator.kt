@@ -1,3 +1,5 @@
+package functions
+
 /**
  * Class that contains the lambda functions for math operations
  */

@@ -1,3 +1,5 @@
+package functions
+
 /**
  * Class that contains infix functions for math operations
  */

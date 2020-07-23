@@ -1,3 +1,5 @@
+package functions
+
 data class CalculatorOperator(val a : Int)
 
 operator fun CalculatorOperator.plus(b : Int) = a + b

@@ -1,3 +1,19 @@
+package functions
+
+/**
+ * If you want to run the code in Kotlin/JVM, use this two commands in your terminal:
+ *
+ * kotlinc functions.main.kt -include-runtime -d functions.main.jar
+ * java -jar functions.main.jar
+ * You can also pass as command line arguments
+ *
+ * operation* num1 numr2
+ *
+ * or
+ *
+ * varargs operation*
+ * if you want your operation with variable parameters.
+ */
 fun main(args : Array<String>) {
 
     val calculator = Calculator()
@@ -19,11 +35,11 @@ fun main(args : Array<String>) {
 
                 when (args[1]) {
 
-                    "plus" -> {
+                    "Functions.plus" -> {
                         result = calculatorVarargs.plus(numbers)
                     }
 
-                    "times" -> {
+                    "Functions.times" -> {
                         result = calculatorVarargs.times(numbers)
                     }
 
@@ -31,7 +47,7 @@ fun main(args : Array<String>) {
                         result = calculatorVarargs.divider(numbers)
                     }
 
-                    "minus" -> {
+                    "Functions.minus" -> {
                         result = calculatorVarargs.minus(numbers)
                     }
 
@@ -56,14 +72,14 @@ fun main(args : Array<String>) {
 
                 when (args[0]) {
 
-                    "plus" -> {
+                    "Functions.plus" -> {
                         result = calculator.plus(num1, num2)
                         resultHigherOrder = calculatorHighOrder.plus(num1, num2)
                         resultInfix = calculatorInfix.plus(num1, num2)
                         resultOperator = calculatorOperator + num2
                     }
 
-                    "times" -> {
+                    "Functions.times" -> {
                         result = calculator.times(num1, num2)
                         resultHigherOrder = calculatorHighOrder.times(num1, num2)
                         resultInfix = calculatorInfix.times(num1, num2)
@@ -77,7 +93,7 @@ fun main(args : Array<String>) {
                         resultOperator = calculatorOperator / 2
                     }
 
-                    "minus" -> {
+                    "Functions.minus" -> {
                         result = calculator.minus(num1, num2)
                         resultHigherOrder = calculatorHighOrder.minus(num1, num2)
                         resultInfix = calculatorInfix.minus(num1, num2)

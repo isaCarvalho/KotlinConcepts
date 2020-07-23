@@ -1,3 +1,5 @@
+package functions
+
 /**
  * Class that contains functions to calculate math operations with variable parameters
  */

@@ -1,3 +1,5 @@
+package functions
+
 /**
  * Class of higher-order functions for math operations
  */
