@@ -1,5 +1,7 @@
 package delegations
 
+import kotlin.properties.Delegates
+
 /**
  * This interface is the model of any store
  */
@@ -9,13 +11,25 @@ interface Store
     var address : String
 
     fun printStore()
+
+    fun resetHours(openHour : String, closeHour : String)
 }
 
 /**
  * This class is implementing the store interface because it is
  * a franchise of the store
  */
-class Franchise(override var name : String, override var address : String) : Store {
+data class Franchise(override var name : String, override var address : String) : Store
+{
+    private var closeHour : String by Delegates.observable("-") {
+        _, oldValue, newValue ->
+        println("Close hour has changed its value from $oldValue to $newValue")
+    }
+
+    private var openHour : String by Delegates.observable("-") {
+        _, oldValue, newValue ->
+        println("Close hour has changed its value from $oldValue to $newValue")
+    }
 
     /**
      * This is the lazy delegate. It means that the websiteDomain variable
@@ -25,10 +39,16 @@ class Franchise(override var name : String, override var address : String) : Sto
         readLine()!!.toString()
     }
 
+    override fun resetHours(openHour: String, closeHour: String) {
+        this.openHour = openHour
+        this.closeHour = closeHour
+    }
+
     override fun printStore() {
         println("The new franchise is called $name\n"
         + "and it is located in $address\n"
-        + "and its website domain is $websiteDomain")
+        + "and its website domain is $websiteDomain\n"
+        + "it opens at ${this.openHour} and closes at ${this.closeHour}")
     }
 }
 
