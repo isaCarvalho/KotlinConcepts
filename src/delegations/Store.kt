@@ -26,9 +26,9 @@ data class Franchise(override var name : String, override var address : String) 
         println("Close hour has changed its value from $oldValue to $newValue")
     }
 
-    private var openHour : String by Delegates.observable("-") {
+    private var openHour : String by Delegates.vetoable("-") {
         _, oldValue, newValue ->
-        println("Close hour has changed its value from $oldValue to $newValue")
+        newValue.isNotEmpty()
     }
 
     /**
